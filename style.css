@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: #e5e7eb;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: #020617;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+/* ================= LIVE READINGS GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.grid div {
+  background: #020617;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ================= BUTTONS ================= */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap; /* ✅ for mobile */
+}
+
+button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #1e293b;
+  color: #e5e7eb;
+  transition: 0.2s ease-in-out;
+  min-width: 140px; /* ✅ prevents squeezing */
+}
+
+button:hover {
+  background: #334155;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+button.danger:hover {
+  background: #b91c1c;
+}
+
+/* ================= FORECAST 3 CHART GRID ================= */
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.forecast-box {
+  background: #0b1220;
+  border-radius: 14px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+
+.forecast-box h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* ================= CANVAS ================= */
+canvas {
+  width: 100% !important;
+  height: 220px !important; /* ✅ better for 3 charts */
+  background: transparent;
+}

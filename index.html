@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AeroSense Air Quality Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Firebase SDK -->
+    <script type="module" src="script.js"></script>
+  </head>
+
+  <body>
+    <h1>AeroSense Air Quality Dashboard</h1>
+
+    <!-- ================= LIVE READINGS ================= -->
+    <section class="card grid">
+      <div>🌡 Temp<br /><span id="temp">--</span> °C</div>
+      <div>💧 Humidity<br /><span id="hum">--</span> %</div>
+      <div>🧪 CO<br /><span id="co">--</span> ppm</div>
+      <div>🌫 PM10<br /><span id="pm10">--</span> µg/m³</div>
+      <div>🌁 PM2.5<br /><span id="pm25">--</span> µg/m³</div>
+    </section>
+
+    <!-- ================= VENTILATION ================= -->
+    <section class="card">
+      <h2>Ventilation System</h2>
+      <p>Status: <strong id="fanState">--</strong></p>
+      <p>Mode: <strong id="fanMode">--</strong></p>
+
+      <div class="btn-group">
+        <button id="autoBtn">AUTO</button>
+        <button id="onBtn" class="danger">EMERGENCY ON</button>
+        <button id="offBtn">FORCE OFF</button>
+      </div>
+    </section>
+
+    <!-- ================= FORECAST (UPDATED) ================= -->
+    <section class="card">
+      <h2>Air Quality Forecast (Next 3 Hours)</h2>
+
+      <div class="forecast-grid">
+        <!-- PM2.5 -->
+        <div class="forecast-box">
+          <h3>🌁 PM2.5 Forecast</h3>
+          <canvas id="pm25Chart"></canvas>
+        </div>
+
+        <!-- PM10 -->
+        <div class="forecast-box">
+          <h3>🌫 PM10 Forecast</h3>
+          <canvas id="pm10Chart"></canvas>
+        </div>
+
+        <!-- CO -->
+        <div class="forecast-box">
+          <h3>🧪 CO Forecast</h3>
+          <canvas id="coChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
